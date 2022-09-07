@@ -108,8 +108,11 @@ $darkColor: #2f2d52;
 		overflow: hidden;
 
 		@include tablet {
-			width: 90%;
-		}
+			width: 100%;
+			height: 100%;
+			border: none;
+			border-radius: none;
+			overflow: visible		}
 
 		.sidebar {
 			flex: 1;
@@ -261,6 +264,10 @@ $darkColor: #2f2d52;
 				height: calc(100% - 160px);
 				overflow-y: scroll;
 
+				@include tablet {
+					height: calc(100% - 130px);
+				}
+
 				.message {
 					display: flex;
 					gap: 20px;
@@ -337,6 +344,10 @@ $darkColor: #2f2d52;
 				display: flex;
 				align-items: center;
 				justify-content: space-between;
+
+				@include tablet {
+					height: 20px;
+				}
 
 				input {
 					width: 100%;
