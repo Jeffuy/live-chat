@@ -1,21 +1,29 @@
-import React from "react";
+import React, { useContext, useRef } from "react";
+import { AuthContext } from "../context/AuthContext";
+import { ChatContext } from "../context/ChatContext";
 
-const Message = () => {
+const Message = ({ message }) => {
+
+	const {currentUser} = useContext(AuthContext);
+	const {data} = useContext(ChatContext);
+
+	const ref = useRef()
+
 	return (
-		<div className="message owner">
+		<div className={`message ${message.senderId === currentUser.uid && "owner"}`}>
 			<div className="messageInfo">
 				<img
-					src="https://images.pexels.com/photos/13195312/pexels-photo-13195312.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+					src={message.senderID === currentUser.uid ? currentUser.photoURL : data.user.photoURL}
 					alt="avatar"
 				/>
 				<span>Just Now</span>
 			</div>
 			<div className="messageContent">
-				<p>Hello</p>
-				<img
-					src="https://images.pexels.com/photos/13195312/pexels-photo-13195312.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+				<p>{message.text}</p>
+				{message.img && <img
+					src={message.img}
 					alt=""
-				/>
+				/>}
 			</div>
 		</div>
 	);
