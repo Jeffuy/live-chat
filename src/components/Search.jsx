@@ -10,7 +10,7 @@ import {
 	setDoc,
 	doc,
 } from "firebase/firestore";
-import { db } from "../firebase";
+import { db } from "../firebase/firebase";
 import { AuthContext } from "./../context/AuthContext";
 
 const Search = () => {

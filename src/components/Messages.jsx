@@ -4,7 +4,7 @@ import { ChatContext } from "../context/ChatContext";
 import Message from "./Message";
 import { onSnapshot } from "firebase/firestore";
 import { doc } from "firebase/firestore";
-import { db } from "../firebase";
+import { db } from "../firebase/firebase";
 
 const Messages = () => {
 	const [messages, setMessages] = useState([]);

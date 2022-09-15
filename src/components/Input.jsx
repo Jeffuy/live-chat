@@ -6,7 +6,7 @@ import { ChatContext } from "../context/ChatContext";
 import { useState } from "react";
 import { arrayUnion, doc, serverTimestamp, Timestamp, updateDoc } from "firebase/firestore";
 import { v4 as uuid } from "uuid";
-import { db, storage } from "../firebase";
+import { db, storage } from "../firebase/firebase";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 
 const Input = () => {

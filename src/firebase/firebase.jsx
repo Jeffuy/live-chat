@@ -3,13 +3,14 @@ import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage";
 import { getFirestore } from "firebase/firestore";
 
+
 const firebaseConfig = {
-	apiKey: "AIzaSyB3mRCTf9jiqmBBEXdkNE35YRxNjOOS--o",
-	authDomain: "kwangchat-2cb16.firebaseapp.com",
-	projectId: "kwangchat-2cb16",
-	storageBucket: "kwangchat-2cb16.appspot.com",
-	messagingSenderId: "846537629401",
-	appId: "1:846537629401:web:e01dfca48e87c48ac328c8",
+	apiKey: process.env.REACT_APP_FIREBASE_APIKEY,
+	authDomain: process.env.REACT_APP_FIREBASE_AUTHDOMAIN,
+	projectId: process.env.REACT_APP_FIREBASE_PROJECTID,
+	storageBucket: process.env.REACT_APP_FIREBASE_STORAGEBUCKET,
+	messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGINGSENDERID,
+	appId: process.env.REACT_APP_FIREBASE_APPID,
 };
 
 export const app = initializeApp(firebaseConfig);
